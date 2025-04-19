@@ -22,9 +22,9 @@ resource "aws_security_group" "ssh_access" {
 }
 
 resource "aws_instance" "ec2" {
-  ami                    = ami-0e449927258d45bc4
-  instance_type          = t2.micro
-  key_name               = Jenkins-key
+  ami                    = "ami-0e449927258d45bc4"
+  instance_type          = "t2.micro"
+  key_name               = "Jenkins-key"
   vpc_security_group_ids = [aws_security_group.ssh_access.id]
 
   tags = {
